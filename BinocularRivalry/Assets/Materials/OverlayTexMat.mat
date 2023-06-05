@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: OverlayTexMat
-  m_Shader: {fileID: 4800000, guid: 9ddd8e31c675df34faea554303205432, type: 3}
+  m_Shader: {fileID: 4800000, guid: 936ea9cba26690441bc77439358f5cf8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

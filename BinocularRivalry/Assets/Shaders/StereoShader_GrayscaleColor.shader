@@ -1,4 +1,4 @@
- Shader "XR/Stereo_Saturation"
+ Shader "XR/Stereo_GrayscaleColor"
 {
    Properties
    {
