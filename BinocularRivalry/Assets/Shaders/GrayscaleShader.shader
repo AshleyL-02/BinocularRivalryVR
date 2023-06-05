@@ -1,4 +1,4 @@
- Shader "Cutom/Grayscale"
+ Shader "Custom/Grayscale"
 {
    Properties
    {

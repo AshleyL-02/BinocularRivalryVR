@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestMat
-  m_Shader: {fileID: 4800000, guid: b80250967294c7a4f8d82cb0925f129b, type: 3}
+  m_Name: TestMat_GrayscaleColor
+  m_Shader: {fileID: 4800000, guid: 936ea9cba26690441bc77439358f5cf8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
