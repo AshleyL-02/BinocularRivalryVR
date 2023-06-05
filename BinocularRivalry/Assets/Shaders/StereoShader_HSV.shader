@@ -3,9 +3,16 @@
    Properties
    {
       _MainTex ("Texture", 2D) = "white" {}
-      _Hue ("Hue", Range(-1.0, 1.0)) = 0.0
-      _Saturation ("Saturation", Range(0.0, 2.0)) = 1.0
-      _Value ("Value", Range(0.0, 2.0)) = 1.0
+
+      // modifiers for left eye
+      _LeftHue ("Left Eye Hue", Range(-1.0, 1.0)) = 0.0
+      _LeftSaturation ("Left Eye Saturation", Range(0.0, 2.0)) = 1.0
+      _LeftValue ("Left Eye Value", Range(0.0, 2.0)) = 1.0
+
+      // modifiers for right eye
+      _RightHue ("Right Eye Hue", Range(-1.0, 1.0)) = 0.0
+      _RightSaturation ("Right Eye Saturation", Range(0.0, 2.0)) = 1.0
+      _RightValue ("Right Eye Value", Range(0.0, 2.0)) = 1.0
    }
 
    SubShader
@@ -17,14 +24,19 @@
          #pragma vertex vert
          #pragma fragment frag
 
-         // texture inputs
+         // texture input
          sampler2D _MainTex;
          float4 _MainTex_ST;
 
-         // color adjustment inputs
-         float _Hue;
-         float _Saturation;
-         float _Value;
+         // color adjustment inputs for left eye
+         float _LeftHue;
+         float _LeftSaturation;
+         float _LeftValue;
+
+         // color adjustment inputs for right eye
+         float _RightHue;
+         float _RightSaturation;
+         float _RightValue;
 
          #include "UnityCG.cginc"
 
@@ -81,9 +93,10 @@
 
             fixed4 c = tex2D(_MainTex, i.uv);
             float3 c_hsv = rgb_to_hsv(c.rgb);
-            float3 c_rgb = hsv_to_rgb(float3(fmod(c_hsv.x + _Hue, 1), min(1, c_hsv.y * _Saturation), min(1, c_hsv.z * _Value)));
+            float3 c_rgb_left = hsv_to_rgb(float3(fmod(c_hsv.x + _LeftHue, 1), min(1, c_hsv.y * _LeftSaturation), min(1, c_hsv.z * _LeftValue)));
+            float3 c_rgb_right = hsv_to_rgb(float3(fmod(c_hsv.x + _RightHue, 1), min(1, c_hsv.y * _RightSaturation), min(1, c_hsv.z * _RightValue)));
 
-            return lerp(float4(c_rgb, 1), c, unity_StereoEyeIndex);
+            return lerp(float4(c_rgb_left, 1), float4(c_rgb_right, 1), unity_StereoEyeIndex);
          }
          ENDCG
       }
