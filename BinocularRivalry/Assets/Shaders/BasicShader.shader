@@ -1,4 +1,4 @@
-Shader "Custom/BasicShader"
+Shader "Custom/Basic"
 {
     Properties
     {
@@ -9,7 +9,6 @@ Shader "Custom/BasicShader"
     }
     SubShader   
     {
-        // TODO: try using multiple render tags (one for object-specific filters and one for global filters)
         Tags { "RenderType"="Overlay" }
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
