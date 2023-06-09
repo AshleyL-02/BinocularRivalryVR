@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OverlayTexMat
-  m_Shader: {fileID: 4800000, guid: 9ddd8e31c675df34faea554303205432, type: 3}
+  m_Name: HSVMat
+  m_Shader: {fileID: 4800000, guid: 646e3bedf32b94146bcdc2e8b2d7418e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -68,10 +68,16 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _LeftHue: 0
+    - _LeftSaturation: 1
+    - _LeftValue: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RightHue: 0
+    - _RightSaturation: 1
+    - _RightValue: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

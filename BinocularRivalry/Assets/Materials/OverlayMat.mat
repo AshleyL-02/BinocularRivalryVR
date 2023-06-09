@@ -8,7 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: OverlayMat
-  m_Shader: {fileID: 4800000, guid: 9ddd8e31c675df34faea554303205432, type: 3}
+  m_Shader: {fileID: 4800000, guid: 5f2f7f6b95dc32845a76eddc05d0d919, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -17,6 +19,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -77,4 +80,6 @@ Material:
     m_Colors:
     - _Color: {r: 0.21990028, g: 0.8207547, b: 0.28936026, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LeftEyeColor: {r: 0, g: 0.87667346, b: 1, a: 1}
+    - _RightEyeColor: {r: 0.89142346, g: 0.4188679, b: 1, a: 1}
   m_BuildTextureStacks: []

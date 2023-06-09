@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OverlayTexMat
-  m_Shader: {fileID: 4800000, guid: 9ddd8e31c675df34faea554303205432, type: 3}
+  m_Name: GrayscaleColorMat
+  m_Shader: {fileID: 4800000, guid: 50708d929ad4dbd4e84a0ba17642737a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
