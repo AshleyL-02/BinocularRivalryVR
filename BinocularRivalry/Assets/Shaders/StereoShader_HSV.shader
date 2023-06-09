@@ -6,12 +6,12 @@
 
       // modifiers for left eye
       _LeftHue ("Left Eye Hue", Range(-1.0, 1.0)) = 0.0
-      _LeftSaturation ("Left Eye Saturation", Range(0.0, 2.0)) = 1.0
+      _LeftSaturation ("Left Eye Saturation", Range(0.0, 2.0)) = 0.0
       _LeftValue ("Left Eye Value", Range(0.0, 2.0)) = 1.0
 
       // modifiers for right eye
       _RightHue ("Right Eye Hue", Range(-1.0, 1.0)) = 0.0
-      _RightSaturation ("Right Eye Saturation", Range(0.0, 2.0)) = 1.0
+      _RightSaturation ("Right Eye Saturation", Range(0.0, 2.0)) = 0.0
       _RightValue ("Right Eye Value", Range(0.0, 2.0)) = 1.0
    }
 

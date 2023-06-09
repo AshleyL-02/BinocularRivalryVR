@@ -1,9 +1,10 @@
-Shader "XR/StereoEyeIndexColor"
+Shader "XR/Stereo_Iridescence"
 {
    Properties
    {
        _LeftEyeColor("Left Eye Color", COLOR) = (0,1,0,1)
        _RightEyeColor("Right Eye Color", COLOR) = (1,0,0,1)
+       _MainTex ("Texture", 2D) = "white" {}
    }
 
    SubShader
@@ -20,11 +21,15 @@ Shader "XR/StereoEyeIndexColor"
          float4 _LeftEyeColor;
          float4 _RightEyeColor;
 
+         sampler2D _MainTex;
+         float4 _MainTex_ST;
+
          #include "UnityCG.cginc"
 
          struct appdata
          {
             float4 vertex : POSITION;
+            float2 uv : TEXCOORD0;
 
             UNITY_VERTEX_INPUT_INSTANCE_ID
          };
@@ -32,6 +37,7 @@ Shader "XR/StereoEyeIndexColor"
          struct v2f
          {
             float4 vertex : SV_POSITION;
+            float2 uv : TEXCOORD0;
 
             UNITY_VERTEX_INPUT_INSTANCE_ID 
             UNITY_VERTEX_OUTPUT_STEREO
@@ -46,6 +52,7 @@ Shader "XR/StereoEyeIndexColor"
             UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
             o.vertex = UnityObjectToClipPos(v.vertex);
+            o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
             return o;
          }
@@ -54,7 +61,8 @@ Shader "XR/StereoEyeIndexColor"
          {
             UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
 
-            return lerp(_LeftEyeColor, _RightEyeColor, unity_StereoEyeIndex);
+            fixed4 c = tex2D(_MainTex, i.uv);
+            return lerp(c * _LeftEyeColor, c * _RightEyeColor, unity_StereoEyeIndex);
          }
          ENDCG
       }
